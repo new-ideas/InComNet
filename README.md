@@ -1,5 +1,5 @@
-# InComNet
-Online Market Place
+<p align="center"># InComNet</p
+<p align="center">Online Market Place<p>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
