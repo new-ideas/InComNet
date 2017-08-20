@@ -5,7 +5,7 @@
         <div>
             <div>
 
-                <h1 class="logo-name">IN+</h1>
+                <h1 class="logo-name">{!! HTML::Image('public/images/mk52ppp.png','Int.Com.Net', array('class'=>'img-responsive')) !!}</h1>
 
             </div>
             <h3>Welcome to IN+</h3>
