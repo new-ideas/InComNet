@@ -11,17 +11,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    {{HTML::style('css/bootstrap.min.css')}}
-    {{HTML::style('font-awesome/css/font-awesome.css')}}
-    {{HTML::style('css/animate.css')}}
-    {{HTML::style('css/style.css')}}
+    {{HTML::style('public/css/bootstrap.min.css')}}
+    {{HTML::style('public/font-awesome/css/font-awesome.css')}}
+    {{HTML::style('public/css/animate.css')}}
+    {{HTML::style('public/css/style.css')}}
 </head>
 <body class="gray-bg">
-
     @yield('content')
 
 <!-- Scripts -->
-{!! HTML::Script('js/jquery-2.1.1.js')!!}
-{!! HTML::Script('js/bootstrap.min.js')!!}
+{!! HTML::Script('public/js/jquery-2.1.1.js')!!}
+{!! HTML::Script('public/js/bootstrap.min.js')!!}
 </body>
 </html>
