@@ -11,11 +11,15 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
-Auth::routes();
+Route::group(['middleware' => ['role:super_admin|moderator']], function () {
+    Route::get('/logout','Auth\LoginController@Logout')->name('logout');
+});
 
 
 /**
