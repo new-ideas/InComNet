@@ -11,16 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 
-/**
- * Home Route
- */
+Route::group(['middleware' => ['role:super_admin|moderator'],'prefix'=>'admin'], function () {
+    Route::get('/logout','Auth\LoginController@Logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', function (){
+       return redirect()->to('/dashboard');
+    });
+
+    Route::get('/dashboard', 'HomeController@index')->name('home');
+});
+
 
