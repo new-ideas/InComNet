@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Role;
+use App\Models\Admin\Skill;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,4 +30,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function skills(){
+        return $this->hasMany(Skill::class);
+    }
 }

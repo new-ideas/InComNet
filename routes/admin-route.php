@@ -38,6 +38,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 Route::group(['middleware' => ['role:super_admin|moderator'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/logout', 'AdminController@Logout')->name('admin.logout');
     Route::get('dashboard', 'HomeController@index')->name('admin.dashboard');
+
+    Route::get('skill/add-edit/{id?}', 'SkillController@AddEdit')->name('skill.add.edit');
+    Route::resource('skill', 'SkillController');
+
 });
 
 
