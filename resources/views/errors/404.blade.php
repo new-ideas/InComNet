@@ -1,4 +1,4 @@
-@extends('layouts.admin-front-end')
+@extends('admin.layouts.admin-front-end')
 
 @section('content')
 
@@ -10,9 +10,9 @@
             Sorry, but the page you are looking for has note been found. Try checking the URL for error, then hit the
             refresh button on your browser or try found something else in our app.
 
-            <div class="form-group">
-                <a href="{{Route('home')}}" class="btn btn-primary">&larr; Back To Home</a>
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<a href="{{Route('home')}}" class="btn btn-primary">&larr; Back To Home</a>--}}
+            {{--</div>--}}
         </div>
     </div>
 @endsection

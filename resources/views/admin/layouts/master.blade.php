@@ -24,10 +24,10 @@
 
 <body>
 <div id="wrapper">
-    @include('includes.menu')
+    @include('admin.includes.menu')
 
     <div id="page-wrapper" class="gray-bg">
-        @include('includes.top-nav')
+        @include('admin.includes.top-nav')
         @yield('content')
     </div>
 </div>
