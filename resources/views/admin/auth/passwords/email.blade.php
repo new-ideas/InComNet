@@ -21,7 +21,7 @@
                                     {{ session('status') }}
                                 </div>
                             @endif
-                            <form class="m-t" role="form" method="POST" action="{{ route('password.email') }}">
+                            <form class="m-t" role="form" method="POST" action="{{ route('admin.password.email') }}">
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <input id="email" type="email" class="form-control" name="email"
