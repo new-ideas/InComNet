@@ -9,6 +9,7 @@
     <title>INSPINIA | Dashboard</title>
 
     <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/custom.css')}}" rel="stylesheet">
     <link href="{{asset('public/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
     <!-- Toastr style -->
@@ -30,7 +31,15 @@
         @include('admin.includes.top-nav')
         @yield('content')
     </div>
+
+    @include('admin.includes.footer')
 </div>
+
+@include('admin.modal.common-modal')
+
+<script>
+    var base_url= "{{url()->to('/')}}";
+</script>
 
 <!-- Mainly scripts -->
 {!! HTML::Script('public/js/jquery-2.1.1.js') !!}
@@ -49,7 +58,7 @@
 <!-- jQuery UI -->
 {!! HTML::Script('public/js/plugins/jquery-ui/jquery-ui.min.js') !!}
 {!! HTML::Script('public/js/plugins/toastr/toastr.min.js') !!}
-
+{!! HTML::Script('public/js/custom.js') !!}
 
 </body>
 </html>
