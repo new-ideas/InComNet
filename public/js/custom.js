@@ -30,13 +30,11 @@ function add_new_skill(id) {
 }
 
 
-
 /* Load Category Add form */
 function addNewCategory(type) {
     var load_data_url = '';
     var TargetDiv = document.getElementById('load-modal-html');
 
-function add_new_socaillink(id) {
 
     $('#common-modal').modal({
         backdrop: 'static',
@@ -60,16 +58,21 @@ function add_new_socaillink(id) {
     });
 }
 
-    var TargetDiv=document.getElementById('load-modal-html');
-    var param ='';
-    if(id){
-        param ='/'+id;
+function add_new_socaillink(id) {
+    var TargetDiv = document.getElementById('load-modal-html');
+    var param = '';
+    if (id) {
+        param = '/' + id;
     }
 
+    $('#common-modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    }).modal('show');
     $.ajax({
-        type:'get',
-        url:base_url + '/admin/sociallink/add-edit'+param,
-        beforeSend:function () {
+        type: 'get',
+        url: base_url + '/admin/sociallink/add-edit' + param,
+        beforeSend: function () {
             $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
         },
         success: function (data) {
@@ -85,16 +88,16 @@ function new_language(id) {
         keyboard: false
     }).modal('show');
 
-    var TargetDiv=document.getElementById('load-modal-html');
-    var param ='';
-    if(id){
-        param ='/'+id;
+    var TargetDiv = document.getElementById('load-modal-html');
+    var param = '';
+    if (id) {
+        param = '/' + id;
     }
 
     $.ajax({
-        type:'get',
-        url:base_url + '/admin/language/add-edit'+param,
-        beforeSend:function () {
+        type: 'get',
+        url: base_url + '/admin/language/add-edit' + param,
+        beforeSend: function () {
             $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
         },
         success: function (data) {
@@ -102,4 +105,5 @@ function new_language(id) {
         }
     });
 }
+
 
