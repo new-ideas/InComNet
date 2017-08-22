@@ -82,7 +82,27 @@ function add_new_socaillink(id) {
 }
 
 
-function new_language(id) {
+function new_language() {
+    $('#common-modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    }).modal('show');
+
+    var TargetDiv = document.getElementById('load-modal-html');
+
+    $.ajax({
+        type: 'get',
+        url: base_url + '/admin/language-add',
+        beforeSend: function () {
+            $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
+        },
+        success: function (data) {
+            $(TargetDiv).html(data);
+        }
+    });
+}
+
+function edit_language(id) {
     $('#common-modal').modal({
         backdrop: 'static',
         keyboard: false
@@ -93,10 +113,52 @@ function new_language(id) {
     if (id) {
         param = '/' + id;
     }
+    $.ajax({
+        type: 'get',
+        url: base_url + '/admin/language-edit' + param,
+        beforeSend: function () {
+            $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
+        },
+        success: function (data) {
+            $(TargetDiv).html(data);
+        }
+    });
+}
+
+function new_country() {
+    $('#common-modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    }).modal('show');
+
+    var TargetDiv = document.getElementById('load-modal-html');
 
     $.ajax({
         type: 'get',
-        url: base_url + '/admin/language/add-edit' + param,
+        url: base_url + '/admin/country-add',
+        beforeSend: function () {
+            $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
+        },
+        success: function (data) {
+            $(TargetDiv).html(data);
+        }
+    });
+}
+
+function edit_country(id) {
+    $('#common-modal').modal({
+        backdrop: 'static',
+        keyboard: false
+    }).modal('show');
+
+    var TargetDiv = document.getElementById('load-modal-html');
+    var param = '';
+    if (id) {
+        param = '/' + id;
+    }
+    $.ajax({
+        type: 'get',
+        url: base_url + '/admin/country-edit' + param,
         beforeSend: function () {
             $(TargetDiv).html('<div class="modal-body"><h1> <i class="fa fa-cog  fa-spin"></i>Loading.....</h1></div>');
         },

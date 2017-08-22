@@ -52,24 +52,27 @@
                                     <td>#</td>
                                     <th>Language Name</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th class="text-center">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-info btn-sm"
-                                                    onclick="return add_new_language('');">Edit
-                                            </button>
-                                            <a href="" class="btn btn-danger btn-sm"
-                                               onclick="return confirm('Are you sure ?')">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @foreach($languages as $key=>$language)
+                                    <tr>
+                                        <td>{{++$key}}</td>
+                                        <td>{{ $language->name }}</td>
+                                        <td>{!! $language->status?'<span class="label label-success">Active</span>':'<span class="label label-danger">In-Active</span>' !!}</td>
+                                        <td class="text-center">
+                                            <div class="btn-group">
+                                                <button class="btn btn-info btn-sm"
+                                                        onclick="return edit_language('{{$language->id}}');">Edit
+                                                </button>
+                                                <a href="{{url('admin/delete/'.$language->id)}}"
+                                                   class="btn btn-danger btn-sm"
+                                                   onclick="return confirm('Are you sure ?')">Delete</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

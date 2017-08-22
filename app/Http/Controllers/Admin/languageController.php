@@ -1,23 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Admin\Language;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class languageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.language.language-list');
+        $languages = Language::all();
+        return view('admin.language.language-list', compact('languages'));
     }
 
-    function languageAddEdit($id=null)
+    function languageAdd()
     {
-        if ($id) {
-            $language = findOrFail($id);
-        }
-        return view('admin.language.add-edit-language', compact('language'));
+        return view('admin.language.add-language');
     }
 
     public function store(Request $request)
@@ -26,10 +25,35 @@ class languageController extends Controller
             'name' => 'required|string|max:190'
         ]);
 
-        $request->user()->languages()->UpdateOrCreate(['id' => @$request->id], $request->only('name'));
-        if($request->id){
-            return redirect('admin/language')->with('success','Data successfully updated!!');
-        }
-        return redirect('admin/language')->with('success','Data successfully added!!');
+        $languages = new Language();
+        $languages->name = $request->name;
+        $languages->save();
+
+        return redirect('admin/language')->with('success', 'Data successfully added!!');
     }
+
+    function languageEdit($id)
+    {
+        $language = Language::where('id', $id)->first();
+        return view('admin.language.edit-language', compact('language'));
+    }
+
+    function update(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        $language = Language::find($request->id);
+        $language->name = $request->name;
+        $language->save();
+        return redirect('admin/language')->with('success', 'Data successfully Updated!!');
+    }
+
+    function delete($id){
+        $language=Language::where('id', $id);
+        $language->delete();
+        return redirect('admin/language')->with('success', 'Data successfully deleted!!');
+    }
+
 }
