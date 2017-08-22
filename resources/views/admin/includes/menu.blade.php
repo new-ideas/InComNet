@@ -49,28 +49,28 @@
                 <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Skills</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="manage-skills">Manage Skills</a></li>
+                    <li><a href="{{ url('admin/skill') }}">Manage Skills</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Language</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="">Manage Language</a></li>
+                    <li><a href="{{ url('admin/language') }}">Manage Language</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Social Links</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="">Manage Social Links</a></li>
+                    <li><a href="{{ url('admin/social-link') }}">Manage Social Links</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Country</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="">Country</a></li>
+                    <li><a href="{{ url('admin/country') }}">Country</a></li>
                 </ul>
             </li>
 

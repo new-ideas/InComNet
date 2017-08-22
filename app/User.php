@@ -2,11 +2,13 @@
 
 namespace App;
 
+use App\Models\Admin\Language;
 use App\Models\Role;
 use App\Models\Admin\Skill;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Admin\SocialLink;
 
 class User extends Authenticatable
 {
@@ -33,5 +35,13 @@ class User extends Authenticatable
 
     public function skills(){
         return $this->hasMany(Skill::class);
+    }
+
+    public function socialLinks(){
+        return $this->hasMany(SocialLink::class);
+    }
+
+    public function languages(){
+        return $this->hasMany(Language::class);
     }
 }
