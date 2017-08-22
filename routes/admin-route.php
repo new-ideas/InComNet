@@ -39,8 +39,25 @@ Route::group(['middleware' => ['role:super_admin|moderator'], 'namespace' => 'Ad
     Route::get('/logout', 'AdminController@Logout')->name('admin.logout');
     Route::get('dashboard', 'HomeController@index')->name('admin.dashboard');
 
+    // Skills
     Route::get('skill/add-edit/{id?}', 'SkillController@AddEdit')->name('skill.add.edit');
     Route::resource('skill', 'SkillController');
+
+    //social-link
+    Route::get('sociallink/add-edit/{id?}', 'SociallinkController@addEdit')->name('socail-link.add.edit');
+    Route::get('sociallink-delete/{id}', 'SociallinkController@delete')->name('socaillink-delete');
+    Route::resource('social-link', 'SociallinkController');
+
+
+    //country info
+    Route::resource('country', 'CountryController');
+    Route::get('country/add-edit/{id?}', 'CountryController@countryaddEdit')->name('country.add.edit');
+
+    // Language Info
+
+    Route::get('language', 'languageController@index');
+    Route::get('language/add-edit/{id?}', 'languageController@languageAddEdit')->name('language.add.edit');
+    Route::post('store', 'languageController@store');
 
 });
 
