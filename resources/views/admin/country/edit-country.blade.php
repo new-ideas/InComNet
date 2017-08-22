@@ -1,31 +1,31 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
     </button>
-    <h4 class="modal-title" id="myModalLabel">{{@$country->id?'Update':'Add'}} Country</h4>
+    <h4 class="modal-title" id="myModalLabel">Update Country</h4>
 </div>
-<form action="{{ route('country.store') }}" method="post" class="form-horizontal">
+<form action="{{ url('admin/country-update') }}" method="post" class="form-horizontal">
     <div class="modal-body">
         {{csrf_field()}}
-        <input type="hidden" name="id" value="{{@$country->id}}">
+        <input type="hidden" name="id" value="{{$country->id}}">
         <div class="form-group">
             <label class="col-md-3 control-label" for="name">Country Code</label>
             <div class="col-md-8">
                 <input type="text" name="country_code" class="form-control" placeholder="Country Code"
-                       required="required" value="{{@$country->name}}">
+                       required="required" value="{{$country->country_code}}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-3 control-label" for="name">Country Name</label>
             <div class="col-md-8">
-                <input type="text" name="name" class="form-control" placeholder="Country name"
-                       required="required" value="{{@$country->name}}">
+                <input type="text" name="country_name" class="form-control" placeholder="Country name"
+                       required="required" value="{{$country->country_name}}">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-3 control-label" for="name">Dialing Code</label>
             <div class="col-md-8">
-                <input type="text" name="dialing_code" class="form-control" placeholder="Skill name"
-                       required="required" value="{{@$country->name}}">
+                <input type="text" name="dial_code" class="form-control" placeholder="Skill name"
+                       required="required" value="{{$country->country_name}}">
             </div>
         </div>
     </div>

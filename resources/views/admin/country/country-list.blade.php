@@ -57,41 +57,37 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--                                @if(count($sociallinks)>0)--}}
-                                {{--@foreach($sociallinks as $key=>$sociallink)--}}
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-info btn-sm"
-                                                    onclick="return add_new_socaillink('');">Edit
-                                            </button>
-                                            <a href="" class="btn btn-danger btn-sm"
-                                               onclick="return confirm('Are you sure ?')">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                {{--@endforeach--}}
-                                {{--@else--}}
-                                <tr>
-                                    <td colspan="5">Data not found</td>
-                                </tr>
-                                {{--@endif--}}
+                                @foreach($countrys as $key=>$country)
+                                    <tr>
+                                        <td>{{++$key}}</td>
+                                        <td>{{$country->country_code}}</td>
+                                        <td>{{$country->country_name}}</td>
+                                        <td>{{$country->dial_code}}</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn btn-info btn-sm"
+                                                        onclick="return edit_country('{{$country->id}}');">Edit
+                                                </button>
+                                                <a href="{{url('admin/delete/'.$country->id)}}"
+                                                   class="btn btn-danger btn-sm"
+                                                   onclick="return confirm('Are you sure ?')">Delete</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
 
-                        {{--                        @if($sociallinks->links())--}}
+                        @if($countrys->links())
                         <div class="pull-left">
-                            {{--                                Showing {{$sociallinks->firstItem()}} to {{$sociallinks->lastItem()}} of {{$sociallinks->total()}}--}}
+                        Showing {{$countrys->firstItem()}} to {{$countrys->lastItem()}}
+                        of {{$countrys->total()}}
                         </div>
                         <div id="page_num" class="pull-right">
-                            {{--                                {{$sociallinks->links()}}--}}
+                        {{$countrys->links()}}
                         </div>
-                        {{--@endif--}}
+                        @endif
 
                     </div>
                 </div>

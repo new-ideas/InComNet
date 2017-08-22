@@ -51,13 +51,20 @@ Route::group(['middleware' => ['role:super_admin|moderator'], 'namespace' => 'Ad
 
     //country info
     Route::resource('country', 'CountryController');
-    Route::get('country/add-edit/{id?}', 'CountryController@countryaddEdit')->name('country.add.edit');
+    Route::get('country-add', 'CountryController@countryAdd')->name('country.add');
+    Route::post('country-store', 'CountryController@countryStore')->name('country.store');
+    Route::get('country-edit/{id}', 'CountryController@countryEdit')->name('country.edit');
+    Route::post('country-update', 'CountryController@countryUpdate')->name('country.update');
+    Route::get('delete/{id}', 'CountryController@countryDelete')->name('country.delete');
 
     // Language Info
 
     Route::get('language', 'languageController@index');
-    Route::get('language/add-edit/{id?}', 'languageController@languageAddEdit')->name('language.add.edit');
+    Route::get('language-add', 'languageController@languageAdd')->name('language.add');
+    Route::get('language-edit/{id}', 'languageController@languageEdit')->name('language.edit');
     Route::post('store', 'languageController@store');
+    Route::post('update', 'languageController@update');
+    Route::get('delete/{id}', 'languageController@delete');
 
 });
 
