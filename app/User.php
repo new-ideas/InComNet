@@ -2,11 +2,11 @@
 
 namespace App;
 
-<<<<<<< HEAD
+
 use App\Models\Admin\Category;
-=======
+
 use App\Models\Admin\Language;
->>>>>>> d708d6e574460469503560d4de98e08687022b79
+
 use App\Models\Role;
 use App\Models\Admin\Skill;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
@@ -42,17 +42,19 @@ class User extends Authenticatable
         return $this->hasMany(Skill::class);
     }
 
-<<<<<<< HEAD
+
     public function category()
     {
         return $this->hasMany(Category::class);
-=======
-    public function socialLinks(){
+    }
+
+    public function socialLinks()
+    {
         return $this->hasMany(SocialLink::class);
     }
 
-    public function languages(){
+    public function languages()
+    {
         return $this->hasMany(Language::class);
->>>>>>> d708d6e574460469503560d4de98e08687022b79
     }
 }
