@@ -41,10 +41,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'id2617038_db_expert_intcom'),
-            'username' => env('DB_USERNAME', 'id2617038_incomnet'),
+            'database' => env('DB_DATABASE', 'id2648397_db_intcomnet'),
+            'username' => env('DB_USERNAME', 'id2648397_db_admin'),
             'password' => env('DB_PASSWORD', 'fifodev123'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
@@ -52,6 +52,7 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'options'   => [PDO::ATTR_EMULATE_PREPARES => true,]
         ],
 
         'pgsql' => [

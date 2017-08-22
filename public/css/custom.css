@@ -4,3 +4,25 @@
 #skill_input_form {
     margin-bottom: 95px;
 }
+.pagination > .active span {
+    background: #1bb394;
+    color: #fff;
+}
+
+.select2-container{
+    z-index: 9999!important;
+}
+
+.select2-selection{
+    height: 35px!important;
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 2px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    font-size: 14px;
+}

@@ -12,7 +12,7 @@
         <div class="alert alert-danger" id="cls_notification">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             @foreach($errors->all() as $error)
-                {{ $error }}
+                <li>{{ $error }}</li>
             @endforeach
         </div>
     </div>

@@ -2,7 +2,11 @@
 
 namespace App;
 
+
+use App\Models\Admin\Category;
+
 use App\Models\Admin\Language;
+
 use App\Models\Role;
 use App\Models\Admin\Skill;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
@@ -33,15 +37,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function skills(){
+    public function skills()
+    {
         return $this->hasMany(Skill::class);
     }
 
-    public function socialLinks(){
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+    public function socialLinks()
+    {
         return $this->hasMany(SocialLink::class);
     }
 
-    public function languages(){
+    public function languages()
+    {
         return $this->hasMany(Language::class);
     }
 }
