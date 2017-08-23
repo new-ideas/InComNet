@@ -66,6 +66,21 @@ Route::group(['middleware' => ['role:super_admin|moderator'], 'namespace' => 'Ad
     Route::post('update', 'languageController@update');
     Route::get('delete/{id}', 'languageController@delete');
 
+    //expert
+    Route::get('expert-list', 'ExpertController@index');
+
+    // Bayer info
+    Route::get('bayer/list', 'bayerController@index');
+
+
+    // Company info
+    Route::get('company/list', 'companyController@index');
+
+    // Setting info
+    Route::get('setting/list', 'settingController@index');
+    Route::post('update/setting', 'settingController@updateSetting');
+
+
 });
 
 

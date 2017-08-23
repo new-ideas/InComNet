@@ -167,5 +167,3 @@ function edit_country(id) {
         }
     });
 }
-
-

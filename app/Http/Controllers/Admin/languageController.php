@@ -46,6 +46,7 @@ class languageController extends Controller
 
         $language = Language::find($request->id);
         $language->name = $request->name;
+        $language->status = $request->status;
         $language->save();
         return redirect('admin/language')->with('success', 'Data successfully Updated!!');
     }
