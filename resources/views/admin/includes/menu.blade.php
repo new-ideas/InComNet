@@ -33,9 +33,9 @@
                 <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Users</span><span
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="">Experts</a></li>
-                    <li><a href="">Bayer</a></li>
-                    <li><a href="">Company</a></li>
+                    <li><a href="{{url('admin/expert-list')}}">Experts</a></li>
+                    <li><a href="{{url('admin/bayer/list')}}">Bayer</a></li>
+                    <li><a href="{{url('admin/company/list')}}">Company</a></li>
                 </ul>
             </li>
             <li>
@@ -71,6 +71,14 @@
                             class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="{{ url('admin/country') }}">Country</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Settings</span><span
+                            class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{ url('admin/setting/list') }}">Manage Settings</a></li>
                 </ul>
             </li>
 

@@ -14,6 +14,15 @@
                        required="required" value="{{$language->name}}">
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label" for="status">Status</label>
+            <div class="col-md-8">
+                <select class="form-control" name="status">
+                    <option value="1" {{$language->status =='1' ? 'selected' : ''}}>Active</option>
+                    <option value="0" {{$language->status =='0' ? 'selected' : ''}}>Inactive</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
         <div class="col-md-8 col-md-offset-3">
